@@ -1,0 +1,6 @@
+{
+    "name": "swift_tools",
+    "type": "bundle",
+    "src": "swift_tools",
+    "swift_src": "swift_files"
+}
