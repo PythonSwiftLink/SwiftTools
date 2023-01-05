@@ -1,0 +1,16 @@
+@wrapper()
+class TestBuffer:
+
+    def __buffer__(self):...
+
+    def __getitem__(self) -> uint8: ...
+
+    def __setitem__(self,value: uint8): ...
+
+    def __len__(self): ...
+
+
+# @wrapper(target_type="struct")
+# class Data:
+
+#     def __buffer__(self): ...
