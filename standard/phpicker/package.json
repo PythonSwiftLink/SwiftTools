@@ -1,0 +1,14 @@
+{
+    "name": "phpicker",
+    "version": "0.0",
+    "description": "",
+    "excluded_sources": [
+        
+    ],
+    "excluded_targets": [
+        
+    ],
+    "depends": [
+        
+    ]
+}
