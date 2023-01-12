@@ -9,6 +9,6 @@
         
     ],
     "depends": [
-        
+        "apple/Foundation"
     ]
 }
