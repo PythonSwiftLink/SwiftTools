@@ -64,7 +64,10 @@ extension UIDevice.BatteryState: PyConvertible, ConvertibleFromPython {
         self.init(rawValue: .init(ptr) ?? 0)
     }
     
-    
+    public init(object: PyPointer) throws {
+        guard let value = Self.init(rawValue: try .init(object: object)) else { throw PythonError.long }
+        self = value
+    }
 }
 
 class BatteryAdvanced: NSObject, BatteryAdvanced_PyProtocol {
