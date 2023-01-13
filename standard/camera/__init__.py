@@ -7,8 +7,8 @@ from apple import CoreVideo
 
 class CameraPackage(WrapPackage):
 
-    name = "camera"
-
+    name = "Camera"
+    file = __file__
     depends = [
         CoreVideo
     ]

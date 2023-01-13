@@ -1,6 +1,6 @@
 from abc import ABC,abstractclassmethod, abstractproperty, abstractmethod, abstractstaticmethod
 from typing import Optional
-
+from json import dumps as jdumps
 
 
 
@@ -17,16 +17,18 @@ class SwiftPackage:
 class Package(ABC):
     
     name: str
-    depends: list[object]
-    swift_packages: list[object]
-
+    depends: list[object] = []
+    swift_packages: list[object] = []
+    file = __file__
+    
     @abstractclassmethod
     def dump(cls):
         return {
             "name": cls.name,
             "library": cls.__module__,
             "depends": [x.package.dump() for x in cls.depends],# type: ignore            
-            "swift_packages": [x.__dict__ for x in cls.depends]
+            "swift_packages": [x.__dict__ for x in cls.swift_packages],
+            "file": cls.file
         }
 
 
