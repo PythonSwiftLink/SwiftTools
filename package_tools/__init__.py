@@ -12,13 +12,21 @@ class SwiftPackage:
     branch: Optional[str]
     depends: list[object]
 
-    
+    def __init__(self,name: str, url: str, min: Optional[str] = None, max: Optional[str] = None, branch: Optional[str] = None, depends: list = [] ):
+        self.name = name
+        self.url = url
+        self.min = min
+        self.max = max
+        self.branch = branch
+        self.depends = depends
+
+
 
 class Package(ABC):
     
     name: str
     depends: list[object] = []
-    swift_packages: list[object] = []
+    swift_packages: list[SwiftPackage] = []
     file = __file__
     
     @abstractclassmethod
@@ -44,6 +52,4 @@ class Dependency:
 
 class WrapPackage(Package):
 
-    name: str
     depends: list[Dependency]
-    swift_packages: list[object]
