@@ -1,10 +1,8 @@
 from package_tools import WrapPackage
 
+class NotificationPackage(WrapPackage):
 
-
-class CoreVideoPackage(WrapPackage):
-
-    name = "CoreVideo"
+    name = "Notification"
     file = __file__
     library = __module__
     version = "1.0.0"
@@ -12,4 +10,4 @@ class CoreVideoPackage(WrapPackage):
         
     ]
 
-package = CoreVideoPackage
+package = NotificationPackage

@@ -1,10 +1,8 @@
 from package_tools import WrapPackage
 
+class TextToSpeechPackage(WrapPackage):
 
-
-class CoreVideoPackage(WrapPackage):
-
-    name = "CoreVideo"
+    name = "TextToSpeech"
     file = __file__
     library = __module__
     version = "1.0.0"
@@ -12,4 +10,4 @@ class CoreVideoPackage(WrapPackage):
         
     ]
 
-package = CoreVideoPackage
+package = TextToSpeechPackage
