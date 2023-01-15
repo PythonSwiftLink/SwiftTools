@@ -12,13 +12,13 @@ class SwiftPackage:
     branch: Optional[str]
     dependencies: list[object]
 
-    def __init__(self,name: str, url: str, min: Optional[str] = None, max: Optional[str] = None, branch: Optional[str] = None, depends: list = [] ):
+    def __init__(self,name: str, url: str, min: Optional[str] = None, max: Optional[str] = None, branch: Optional[str] = None, dependencies: list = [] ):
         self.name = name
         self.url = url
         self.min = min
         self.max = max
         self.branch = branch
-        self.depends = depends
+        self.dependencies = dependencies
 
 
 class Package(ABC):
@@ -44,9 +44,34 @@ class XCProject(ABC):
     dependencies: list[WrapPackage] = []
     swift_packages: list[SwiftPackage] = []
     python_source: str = ""
+    linked_source: bool = False
 
 class WorkDirectory(ABC):
+
+    """
+    class MyDirectory(WorkDirectory):
+    
+        projects = [
+            MyProject,
+            OtherProject
+        ]
+
+        kivy_recipes = [
+            "pillow"
+        ]
+
+        pips = [
+            "kivymd",
+            "pygments"
+        ]
+
+    directory = MyDirectory
+    """
+
     python: str = "python3.9"
+    site_packages: str = "venv/lib/python3.9/site-packages"
+
     projects: list[XCProject] = []
     pips: list[str] = []
     kivy_recipes: list[str] = []
+

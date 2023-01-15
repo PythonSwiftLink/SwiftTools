@@ -11,8 +11,8 @@ class WebViewsPackage(WrapPackage):
     file = __file__
     library = __module__
     version = "1.0.0"
-    depends = [
-        Foundation
+    dependencies = [
+        Foundation.package
     ]
     swift_packages = [
 

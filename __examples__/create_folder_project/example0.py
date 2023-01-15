@@ -10,36 +10,42 @@ from plyer import brightness, tts
 class MyProject(XCProject):
 
     name = "my_project"
+    python_source = ""
+    linked_source = True
+
     dependencies = [
         camera.package,
-        phpicker.package,
-        webviews.package,
+        #phpicker.package,
+        # #webviews.package,
         
-        tts.package,
-        brightness.package
+        # tts.package,
+        # brightness.package
     ]
     
-class OtherProject(XCProject):
+# class OtherProject(XCProject):
 
-    name = "my_other_project"
-    dependencies = [
-        camera.package,
-        phpicker.package,
-        webviews.package,
+#     name = "my_other_project"
+#     dependencies = [
+#         camera.package,
+#         # phpicker.package,
+#         # webviews.package,
         
-        tts.package,
-        brightness.package
-    ]
+#         # tts.package,
+#         # brightness.package
+#     ]
     
 
 
 class MyDirectory(WorkDirectory):
 
-    python = "python3.9" # or write full path to your python
+    python = "python3.9" # or write full path to your python, default is python3.9
+
+    # overwrite site-packages
+    site_packages = "venv/lib/python3.9/site-packages" 
 
     projects = [
         MyProject,
-        OtherProject
+
     ]
 
     kivy_recipes = [
