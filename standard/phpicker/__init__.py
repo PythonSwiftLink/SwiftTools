@@ -12,7 +12,7 @@ class PHPickerPackage(WrapPackage):
     library = __module__
     version = "1.0.0"
     depends = [
-        Foundation
+        Foundation.package
     ]
     swift_packages = [
         SwiftPackage(
