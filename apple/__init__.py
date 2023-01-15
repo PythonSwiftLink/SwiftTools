@@ -6,7 +6,7 @@ class FoundationPackage(WrapPackage):
     file = __file__
     library = __module__
     version = "1.0.0"
-    depends = [
+    dependencies = [
         
     ]
 
