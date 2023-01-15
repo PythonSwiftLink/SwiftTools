@@ -20,40 +20,41 @@ class SwiftPackage:
         self.branch = branch
         self.depends = depends
 
-    def dump(self):
-        return {
-            "name": self.name,
-            "url": self.url,
-            "min": self.min,
-            "max": self.max,
-            "branch": self.branch,
-            "depends": [x for x in self.depends]
-        }
+    # def dump(self):
+    #     return {
+    #         "name": self.name,
+    #         "url": self.url,
+    #         "min": self.min,
+    #         "max": self.max,
+    #         "branch": self.branch,
+    #         "depends": [x for x in self.depends]
+    #     }
 
 
 
 class Package(ABC):
     
-    name: str
+    name: str = "Package"
     depends: list[object] = []
     swift_packages: list[SwiftPackage] = []
-    file = __file__
+    file: str = __file__
     
-    @abstractclassmethod
-    def dump(cls):
-        return {
-            "_str": "abc",
-            "_float": 4566.866788,
-            "_int": 5775577,
-            "_bool": True,
-            "_uint8": 1,
+    plist_keys: dict = {}
+    # @abstractclassmethod
+    # def dump(cls):
+    #     return {
+    #         "_str": "abc",
+    #         "_float": 4566.866788,
+    #         "_int": 5775577,
+    #         "_bool": True,
+    #         "_uint8": 1,
 
-            "name": cls.name,
-            "library": cls.__module__,
-            "depends": [x.package for x in cls.depends],# type: ignore            
-            "swift_packages": [x for x in cls.swift_packages],
-            "file": cls.file
-        }
+    #         "name": cls.name,
+    #         "library": cls.__module__,
+    #         "depends": [x.package for x in cls.depends],# type: ignore            
+    #         "swift_packages": [x for x in cls.swift_packages],
+    #         "file": cls.file
+    #     }
 
 
 
@@ -68,4 +69,4 @@ class Dependency:
 
 class WrapPackage(Package):
 
-    depends: list[Dependency]
+    depends: list[Dependency] = []
