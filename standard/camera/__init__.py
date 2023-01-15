@@ -11,7 +11,7 @@ class CameraPackage(WrapPackage):
     file = __file__
     library = __module__
     version = "1.0.0"
-    depends = [
+    dependencies = [
         CoreVideo.package
     ]
     plist_keys = {'NSCameraUsageDescription': '$(PRODUCT_NAME) camera description.'}
