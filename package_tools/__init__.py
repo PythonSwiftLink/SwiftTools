@@ -26,11 +26,13 @@ class Package(ABC):
     name: str = "Package"
     swift_packages: list[SwiftPackage] = []
     file: str = __file__
-    
+    library = __module__
+
     plist_keys: dict = {}
 
     pbxproj_flags: dict = {}
 
+    deployment_target: str = "11.0"
 
 
 class WrapPackage(Package):
