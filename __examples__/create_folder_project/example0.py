@@ -1,10 +1,8 @@
-print(globals())
-
 
 from package_tools import WorkDirectory, XCProject
 
-from standard import camera, phpicker, webviews
-from plyer import brightness, tts
+from standard import camera, phpicker, webviews, notification
+from plyer import brightness, tts, filechooser
 
 
 class MyProject(XCProject):
@@ -15,26 +13,14 @@ class MyProject(XCProject):
 
     dependencies = [
         camera.package,
-        # phpicker.package,
-        # webviews.package,
-        
-        # tts.package,
-        # brightness.package
+        phpicker.package,
+        webviews.package,
+        notification.package,
+        filechooser.package,
+        tts.package,
+        brightness.package
     ]
     
-# class OtherProject(XCProject):
-
-#     name = "my_other_project"
-#     dependencies = [
-#         camera.package,
-#         # phpicker.package,
-#         # webviews.package,
-        
-#         # tts.package,
-#         # brightness.package
-#     ]
-    
-
 
 class MyDirectory(WorkDirectory):
 
@@ -44,7 +30,6 @@ class MyDirectory(WorkDirectory):
 
     projects = [
         MyProject,
-
     ]
 
     kivy_recipes = [
