@@ -70,4 +70,6 @@ class AdMobPackage(WrapPackage):
         ]
     }
 
+    dependencies = []
+
 package = AdMobPackage
