@@ -1,7 +1,7 @@
 
 from package_tools import WorkDirectory, XCProject
 
-from standard import camera, phpicker, webviews, notification
+from standard import camera, phpicker, webviews, notification, admob
 from plyer import brightness, tts, filechooser
 
 
@@ -18,7 +18,8 @@ class MyProject(XCProject):
         notification.package,
         filechooser.package,
         tts.package,
-        brightness.package
+        brightness.package,
+        admob.package
     ]
     
 
