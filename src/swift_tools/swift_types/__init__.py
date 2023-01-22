@@ -65,3 +65,46 @@ def call_target(_: str): ...
 def swift_func(): ...
 
 def wrapper(py_init=True): ...
+
+def no_labels(**labels):
+    """
+    ```python
+    #python
+    @no_labels
+    def my_func(self, arg: str, arg2: str, arg3: str): ...
+    ```
+
+    in swift:
+    ```swift
+    // without
+    func my_func(arg: String, arg2: String, arg3: String)
+    ```
+    ................................
+    
+    after:
+    ```swift
+    // with
+    func my_func(_ arg: String, _ arg2: String, _ arg3: String)
+    ```
+
+    #####################################
+    ```python
+    #python
+    @no_labels(arg2=True)
+    def my_func(self, arg: str, arg2: str, arg3: str): ...
+    ```
+
+    in swift:
+    ```swift
+    // without
+    func my_func(arg: String, arg2: String, arg3: String)
+    ```
+    ................................
+    
+    after:
+    ```swift
+    // with
+    func my_func(arg: String, _ arg2: String, arg3: String)
+    ```
+
+    """

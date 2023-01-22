@@ -1,13 +1,13 @@
 
 from package_tools import WorkDirectory, XCProject
 
-from standard import camera, phpicker, webviews, notification, admob
-from plyer import brightness, tts, filechooser
+from standard import camera, phpicker, webviews, notification, speech_recognizer
+from plyer import brightness, tts, filechooser, audio
 
 
 class MyProject(XCProject):
 
-    name = "my_project"
+    name = "please_work"
     python_source = "/Volumes/WorkSSD/pyswifttests/pysrc"
     linked_source = True
 
@@ -19,7 +19,8 @@ class MyProject(XCProject):
         filechooser.package,
         tts.package,
         brightness.package,
-        admob.package
+        audio.package,
+        speech_recognizer.package
     ]
     
 
@@ -41,5 +42,5 @@ class MyDirectory(WorkDirectory):
         "kivymd",
         "pygments"
     ]
-
-directory = MyDirectory
+project = MyProject
+#directory = MyDirectory
