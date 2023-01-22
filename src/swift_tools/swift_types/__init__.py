@@ -4,7 +4,7 @@ from ctypes import c_uint8
 from ctypes import c_int8 
 from ctypes import c_uint
 from ctypes import c_long
-from typing import List,Tuple,TypeVar
+from typing import List,Tuple,TypeVar, TypeAlias, NewType
 
 #from ctypes import c_int8 as
 int32 = c_int
@@ -24,6 +24,9 @@ uint = c_uint
 double = c_double
 float32 = c_float
 longdouble = c_longdouble
+ 
+URL = NewType("URL", str)
+Error = NewType("Error", str)
 
 __all__ = [
     "long",
@@ -52,6 +55,7 @@ __all__ = [
     "swift_func",
     "EventDispatcher",
     "wrapper",
+    "no_labels"
     ]
 
 def EventDispatcher(_: list[str]): ...
