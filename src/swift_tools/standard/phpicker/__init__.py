@@ -1,7 +1,7 @@
 from swift_tools.package_tools import WrapPackage,SwiftPackage
 
 
-from apple import Foundation
+from swift_tools.apple import Foundation
 
 
 

@@ -1,13 +1,13 @@
 
-from package_tools import WorkDirectory, XCProject
+from swift_tools.package_tools import WorkDirectory, XCProject
 
-from standard import camera, phpicker, webviews, notification, speech_recognizer
-from plyer import brightness, tts, filechooser, audio
+from swift_tools.standard import camera, phpicker, webviews, notification, speech_recognizer
+from swift_tools.plyer import brightness, tts, filechooser, audio
 
 
 class MyProject(XCProject):
 
-    name = "please_work"
+    name = "my_project"
     python_source = "/Volumes/WorkSSD/pyswifttests/pysrc"
     linked_source = True
 
