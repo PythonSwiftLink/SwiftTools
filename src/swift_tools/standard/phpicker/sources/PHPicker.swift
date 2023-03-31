@@ -72,7 +72,11 @@ extension PHPicker: PHPicker_PyProtocol {
     
     func open(limit: Int) {
         newView(limit: limit)
-        guard let view = view, let vc = get_viewcontroller() else { return }
+        guard
+            let view = view,
+            let window = UIApplication.shared.windows.first,
+            let vc = window.rootViewController
+        else { return }
         vc.present(view, animated: true)
     }
     func dismiss() {
