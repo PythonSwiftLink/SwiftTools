@@ -39,9 +39,10 @@ class SpeechRecognizer {
      Initializes a new speech recognizer. If this is the first time you've used the class, it
      requests access to the speech recognizer and the microphone.
      */
-    init() {
-        recognizer = SFSpeechRecognizer()
+    required init(locale: String) {
+        recognizer = SFSpeechRecognizer(locale: .init(identifier: locale))
         
+        //print(SFSpeechRecognizer.supportedLocales().map(\.description))
         Task(priority: .background) {
             do {
                 guard recognizer != nil else {
