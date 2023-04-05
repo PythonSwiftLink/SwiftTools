@@ -5,28 +5,8 @@ from ctypes import c_int8
 from ctypes import c_uint
 from ctypes import c_long
 from typing import List,Tuple,TypeVar, TypeAlias, NewType
+from typing import Optional
 
-#from ctypes import c_int8 as
-int32 = c_int
-long = c_long
-ulong = c_ulong
-longlong = c_longlong
-ulonglong = c_ulonglong
-uint8 = c_uint8
-short = c_int16
-int16 = c_int16
-ushort = c_uint16
-uint16 = c_uint16
-data = c_uint8
-json = c_int8
-jsondata = c_uint8
-uint = c_uint
-double = c_double
-float32 = c_float
-longdouble = c_longdouble
- 
-URL = NewType("URL", str)
-Error = NewType("Error", str)
 
 __all__ = [
     "long",
@@ -55,10 +35,42 @@ __all__ = [
     "swift_func",
     "EventDispatcher",
     "wrapper",
-    "no_labels"
+    "no_labels",
+
+    "URL",
+    "Error",
+    "UUID",
+    "Optional"
     ]
 
-def EventDispatcher(_: list[str]): ...
+#from ctypes import c_int8 as
+int32 = NewType("int32", int)
+#int32 = c_int
+long = c_long
+ulong = c_ulong
+longlong = c_longlong
+ulonglong = c_ulonglong
+uint8 = c_uint8
+short = c_int16
+int16 = c_int16
+ushort = c_uint16
+uint16 = c_uint16
+data = c_uint8
+json = c_int8
+jsondata = c_uint8
+uint = c_uint
+double = c_double
+float32 = c_float
+longdouble = c_longdouble
+ 
+URL = NewType("URL", str)
+Error = NewType("Error", str)
+UUID = NewType("UUID", str)
+
+
+def wrapper(py_init=True, debug_mode=False, target: str = None): ...
+
+#def EventDispatcher(_: list[str]): ...
 
 def callback(): ...
 
@@ -68,7 +80,7 @@ def call_target(_: str): ...
 
 def swift_func(): ...
 
-def wrapper(py_init=True): ...
+
 
 def no_labels(**labels):
     """
