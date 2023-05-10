@@ -48,12 +48,17 @@ __all__ = [
     "args_rename",
     "args_alias",
     "no_protocol",
+    "protocols",
 
     "URL",
     "Error",
     "UUID",
     "Optional",
-    "SwiftClass"
+    "SwiftClass",
+
+    "NSObject",
+    "SwiftObject",
+    "SwiftBase"
     ]
 
 #from ctypes import c_int8 as
@@ -170,4 +175,10 @@ class SwiftClass(object):
     def __repr__(self) -> str: ...
 
 
-        
+def protocols(*protocols: str): ...
+
+class NSObject: ...
+
+class SwiftObject: ...
+
+class SwiftBase: ...
